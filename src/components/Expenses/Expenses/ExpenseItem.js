@@ -2,7 +2,7 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../components/Card";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   /*console.log(props.expenseData.date);*/
   const day = props.expenseData.date.toLocaleString("en-US", {
     day: "2-digit",
@@ -22,6 +22,6 @@ function ExpenseItem(props) {
       </div>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;

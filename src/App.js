@@ -1,7 +1,7 @@
 import "./App.css";
 import Expenses from "./Expenses/Expenses";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       date: new Date(2023, 9, 6),
@@ -22,6 +22,6 @@ function App() {
       <Expenses expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;
