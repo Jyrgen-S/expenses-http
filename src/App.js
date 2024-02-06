@@ -20,7 +20,7 @@ const App = () => {
   const price = 30.99;*/
   return (
     <div className="App">
-      <NewExpense></NewExpense>
+      <NewExpense />
       <Expenses expenses={expenses} />
     </div>
   );
