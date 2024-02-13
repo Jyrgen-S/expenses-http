@@ -15,12 +15,17 @@ const App = () => {
       price: 99.99,
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
   /*const date = new Date(2023, 9, 6);
   const title = "New book";
   const price = 30.99;*/
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses expenses={expenses} />
     </div>
   );
