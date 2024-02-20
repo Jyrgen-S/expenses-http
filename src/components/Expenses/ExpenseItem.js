@@ -21,15 +21,17 @@ const ExpenseItem = (props) => {
   const year = props.expenseData.date.getFullYear();*/
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.expenseData.date} />
-      <div className="expense-item__description"></div>
-      <h2>{props.expenseData.title}</h2>
-      <div div className="expense-item__price">
-        {props.expenseData.price}
-      </div>
-      <button onClick={clickHandler}>Click Me</button>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.expenseData.date} />
+        <div className="expense-item__description"></div>
+        <h2>{props.expenseData.title}</h2>
+        <div div className="expense-item__price">
+          {props.expenseData.price}
+        </div>
+        <button onClick={clickHandler}>Click Me</button>
+      </Card>
+    </li>
   );
 };
 
