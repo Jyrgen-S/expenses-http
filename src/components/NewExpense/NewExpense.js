@@ -13,14 +13,13 @@ const NewExpense = (props) => {
     setIsEditing(false);
   };
 
-  // Siin defineerime saveExpenseDataHandler funktsiooni
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
-    setIsEditing(false); // Peatame redigeerimise pärast andmete lisamist
+    setIsEditing(false);
   };
 
   return (
