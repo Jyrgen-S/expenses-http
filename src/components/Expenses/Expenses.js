@@ -6,15 +6,19 @@ import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2024");
+  console.log(props.expenses);
+  const [filteredYear, setFilteredYear] = useState("2023");
+
+  console.log("Year data in expenses " + filteredYear);
 
   const filterChangeHandler = (year) => {
-    console.log("Year data in expenses " + year);
+    console.log("Filter change handled handled by Expenses.js");
+    console.log(year + " in Expenses.js");
     setFilteredYear(year);
   };
 
   const filteredExpenses = props.expenses.filter((expense) => {
-    return new Date(expense.date).getFullYear() == filteredYear;
+    return new Date(expense.date).getFullYear().toString() === filteredYear;
   });
 
   /* let expensesContent = <p>No expenses found.</p>;
@@ -29,8 +33,11 @@ const Expenses = (props) => {
       <ExpensesFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
-      />
-      <ExpensesList expenses={filteredExpenses} />
+      ></ExpensesFilter>
+      <ExpensesList
+        filteredExpenses={filteredExpenses}
+        isLoading={props.isLoading}
+      ></ExpensesList>
     </Card>
   );
 };
